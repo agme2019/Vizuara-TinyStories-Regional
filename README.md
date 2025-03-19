@@ -11,16 +11,6 @@
   [![agnivo](https://img.shields.io/badge/agnivo-black?logo=github&logoColor=white&labelColor=black&color=black&style=flat)](https://github.com/agme2019)
   [![raj](https://img.shields.io/badge/🌐-rajdandekar-black?logo=globe&logoColor=white&labelColor=black&color=black&style=flat)](https://github.com/agme2019)
   
-  
-  <p>
-    <strong>
-      <href="https://img.shields.io/badge/nirvan840-black?logo=github&logoColor=white&labelColor=black&color=white&style=for-the-badge)](https://github.com/nirvan840"></href>
-      <a href="https://github.com/malharinamdar">@malhar</a>,
-      <a href="https://github.com/agme2019">@angnivo</a>,
-      <a href="https://www.linkedin.com/in/raj-abhijit-dandekar-67a33118a/?originalSubdomain=in">@rajdandekar</a>
-    </strong>
-  </p>
-  
 </div>
 <br>
 
