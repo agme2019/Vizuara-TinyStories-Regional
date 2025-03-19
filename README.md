@@ -27,8 +27,13 @@
 > Our TinyStories Regional paper will soon be on arXiv!
 > Any references to the paper below are currently not accessible 
 
+#### Clone Repository
 ```sh
 git clone https://github.com/nirvan840/Vizuara-TinyStories-Regional.git
+```
+#### Requirements 
+```sh
+pip install -U g4f[all] transformers datasets huggingface_hub torch numpy tiktoken wandb tqdm aiolimter
 ```
 
 ---
