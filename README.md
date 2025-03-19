@@ -72,7 +72,7 @@ pip install -U g4f[all] transformers datasets huggingface_hub tiktoken wandb tqd
 > - Translated versions (our Hindi ➡️ Bengali ; Hindi ➡️ Marathi ; Bengali ➡️ Hindi) will be soon on our HF
 
 <h2 id="preparing-prompts">✍️ Preparing Prompts</h2>
-- d
+
 
 
 ## 💬 Prompting a Model
