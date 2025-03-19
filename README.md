@@ -14,9 +14,9 @@
       <a href="https://www.linkedin.com/in/raj-abhijit-dandekar-67a33118a/?originalSubdomain=in">@rajdandekar</a>
     </strong>
   </p>
-  <br>
 
-  <h2><i>Special Thanks ❤️</i></h2>
+  <br>
+  <h2> <i>Special Thanks ❤️</i></h2>
   <i> <a href="https://tensordock.com/">TensorDock</a> for providing GPU access! 
       Please check them out for easy-to-deploy and cheap GPU options! </i>  
   <br>  
@@ -27,3 +27,18 @@
   </i>
   
 </div>
+<br>
+
+> [!NOTE]
+> * <a href="https://tensordock.com/">TensorDock</a> for providing GPU access! Please check them out for easy-to-deploy and cheap GPU options! </i>
+> * <a href="https://huggingface.co/sarvamai">Sarvam</a>, <a href="https://huggingface.co/TWO">SUTRA</a>, and <a href="https://karpathy.ai/">Andrej Karpathy</a> for your open-source efforts!
+
+> [!IMPORTANT]
+> * Currently, models only support story completion based on starting prompts
+> * Guides to replicating and using the repository and the models are below!
+
+<br>
+
+---
+
+
