@@ -19,19 +19,17 @@
 > * <i> Guides to replicating and using the repository and the models are below! </i>
 
 > [!NOTE]
-> * <i> Special thanks to Microsoft for inspiration from their original <a href="https://arxiv.org/abs/2305.07759">TinyStories</a> paper 💙 </i>
 > * <i> <a href="https://tensordock.com/">TensorDock</a> for providing GPU access! Please check them out for easy-to-deploy and cheap GPU options 💚 </i>
+> * <i> Special thanks to Microsoft for inspiration from their original <a href="https://arxiv.org/abs/2305.07759">TinyStories</a> paper 💙 </i>
 > * <i> <a href="https://huggingface.co/sarvamai">Sarvam</a>, <a href="https://huggingface.co/TWO">SUTRA</a>, and <a href="https://karpathy.ai/">Andrej Karpathy</a> for your open-source efforts ❤️ </i>
 
 > [!WARNING]
 > Our TinyStories Regional paper will soon be on arXiv!
 > Any references to the paper below are currently not accessible 
 
-#### Clone Repository
 ```sh
 git clone https://github.com/nirvan840/Vizuara-TinyStories-Regional.git
 ```
-#### Requirements 
 ```sh
 pip install -U g4f[all] transformers datasets huggingface_hub torch numpy tiktoken wandb tqdm aiolimter
 ```
