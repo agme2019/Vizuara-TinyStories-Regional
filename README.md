@@ -19,8 +19,9 @@
 > * <i> Guides to replicating and using the repository and the models are below! </i>
 
 > [!NOTE]
-> * <i> Special thanks to <a href="https://tensordock.com/">TensorDock</a> for providing GPU compute! Check them out for easy-to-deploy and cheap GPU options 💚 </i>
-> * <i> Special thanks to Microsoft for inspiring us with their original <a href="https://arxiv.org/abs/2305.07759">TinyStories</a> paper 💙 </i>
+> #### _A special thanks to_
+> * <i> <a href="https://tensordock.com/">TensorDock</a> for providing GPU compute! Check them out for easy-to-deploy and cheap GPU/CPU VMs 💚 </i>
+> * <i> Microsoft for inspiring us with their original <a href="https://arxiv.org/abs/2305.07759">TinyStories</a> paper 💙 </i>
 > * <i> <a href="https://huggingface.co/sarvamai">Sarvam</a>, <a href="https://huggingface.co/TWO">SUTRA</a>, and <a href="https://karpathy.ai/">Andrej Karpathy</a> for their open-source efforts ❤️ </i>
 
 > [!WARNING]
