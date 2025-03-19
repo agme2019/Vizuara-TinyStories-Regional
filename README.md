@@ -179,3 +179,13 @@ chmod +x automate-training.sh
 <br>
 
 ## 🔍 Inference and Evaluation
+
+
+
+---
+
+<br>
+
+## 💰 Costs
+
+### _Soon!_
