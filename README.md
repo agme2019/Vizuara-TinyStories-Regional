@@ -116,3 +116,13 @@ tmux new -s session_name
 <br>
 
 ## ⚙️ Training Small Language Models (SLMs) 
+
+> [!NOTE]
+> * We utilize Andrej Karpathy's [nanoGPT](https://github.com/karpathy/nanoGPT) repository (with modifications) to train models.
+> * We provide a basic procedural overview below. For a more in-depth guide, please check the official nanoGPT repository :)
+> * Our training script supports multi-GPU training (DDP), progress (TQDM) and logging support (WANDB), along with easy customizability.
+
+> [!IMPORTANT]
+> * Training our SLMs is compute-friendly!
+> * Lower end GPUs T4 (Google Collab), P100 (Kaggle) can be utilized!
+> * A detailed 
