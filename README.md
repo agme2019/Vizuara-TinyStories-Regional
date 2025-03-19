@@ -29,6 +29,12 @@
 
 <br>
 
+```sh
+!git clone https://github.com/nirvan840/Vizuara-TinyStories-Regional
+```
+
+<br>
+
 ---
 
 
