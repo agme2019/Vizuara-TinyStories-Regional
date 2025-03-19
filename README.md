@@ -65,7 +65,7 @@ pip install -U g4f[all] transformers datasets huggingface_hub tiktoken wandb tqd
 > [!WARNING] 
 > <i> This repository provides code to generate data by making API calls to SOTA models (4o, 4o-mini, Gemini-flash-1.5, etc.) using the [GPT-4-free (G4F)](https://github.com/xtekky/gpt4free) repository. We do not condone using this repository for large-scale dataset generation; we include it as a free alternative to paid API services. Please read and follow official OpenAI/Gemini guidelines. </i>
 
-> [!IMPORTANT]
+> [!NOTE]
 > - **Our** datasets for Hindi, Marathi and Bengali generated using **GPT-4o-mini**, are **open-sourced** on our HF
 > - **Translated** versions (Hindi and Bengali) of **Microsoft's TinyStories** dataset can also be found on our HF
 > - Translated versions (our Hindi ➡️ Bengali ; Hindi ➡️ Marathi ; Bengali ➡️ Hindi) will be soon on our HF
