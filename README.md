@@ -41,12 +41,12 @@ pip install g4f[all] aiolimter transformers datasets huggingface_hub sentencepie
 
 # 📚 Table of Contents
 
-- 🗂️ Dataset Generation
-  - [✍️ Preparing Prompts](#preparing-prompts)
-  - [💬 Prompting a Model](#prompting-a-model)
-- ⚙️ Training SLMs
-  - [🔤 Tokenizing Data](#tokenizing-data)
-  - [🏋️ Training the Model](#training-the-model)
+- ### 🗂️ Dataset Generation
+  - #### [✍️ Preparing Prompts](#preparing-prompts)
+  - #### [💬 Prompting a Model](#prompting-a-model)
+- ### ⚙️ Training SLMs
+  - #### [🔤 Tokenizing Data](#tokenizing-data)
+  - #### [🏋️ Training the Model](#training-the-model)
 - 🔍 Inference and Evaluation
   - [🤖 Inference Models (Local or HF)](#inference-models-local-or-hf)
   - [📊 Evaluate Inference/Stories](#evaluate-inference-stories)
