@@ -20,8 +20,8 @@
 
 > [!NOTE]
 > * <i> <a href="https://tensordock.com/">TensorDock</a> for providing GPU access! Please check them out for easy-to-deploy and cheap GPU options 💚 </i>
-> * <i> Special thanks to Microsoft for inspiration from their original <a href="https://arxiv.org/abs/2305.07759">TinyStories</a> paper 💙 </i>
-> * <i> <a href="https://huggingface.co/sarvamai">Sarvam</a>, <a href="https://huggingface.co/TWO">SUTRA</a>, and <a href="https://karpathy.ai/">Andrej Karpathy</a> for your open-source efforts ❤️ </i>
+> * <i> Special thanks to Microsoft for inspiring us with their original <a href="https://arxiv.org/abs/2305.07759">TinyStories</a> paper 💙 </i>
+> * <i> <a href="https://huggingface.co/sarvamai">Sarvam</a>, <a href="https://huggingface.co/TWO">SUTRA</a>, and <a href="https://karpathy.ai/">Andrej Karpathy</a> for their open-source efforts ❤️ </i>
 
 > [!WARNING]
 > * Our TinyStories Regional paper will soon be on arXiv!
