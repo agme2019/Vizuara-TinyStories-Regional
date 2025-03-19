@@ -70,7 +70,7 @@ pip install -U g4f[all] transformers datasets huggingface_hub tiktoken wandb tqd
 > - **Translated** versions (Hindi and Bengali) of **Microsoft's TinyStories** dataset can also be found on our HF
 > - Translated versions (our Hindi ➡️ Bengali ; Hindi ➡️ Marathi ; Bengali ➡️ Hindi) will be soon on our HF
 
-## ✍️ Preparing Prompts
+<h2 id="preparing-prompts">✍️ Preparing Prompts</h2>
 - d
 
 
