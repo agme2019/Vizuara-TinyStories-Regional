@@ -14,14 +14,18 @@
 </div>
 <br>
 
+> [!IMPORTANT]
+> * <i> Currently, models only support story completion based on starting prompts </i>
+> * <i> Guides to replicating and using the repository and the models are below! </i>
+
 > [!NOTE]
 > * <i> Special thanks to Microsoft for inspiration from their original <a href="https://arxiv.org/abs/2305.07759">TinyStories</a> paper 💙 </i>
 > * <i> <a href="https://tensordock.com/">TensorDock</a> for providing GPU access! Please check them out for easy-to-deploy and cheap GPU options 💚 </i>
 > * <i> <a href="https://huggingface.co/sarvamai">Sarvam</a>, <a href="https://huggingface.co/TWO">SUTRA</a>, and <a href="https://karpathy.ai/">Andrej Karpathy</a> for your open-source efforts ❤️ </i>
 
-> [!IMPORTANT]
-> * <i> Currently, models only support story completion based on starting prompts </i>
-> * <i> Guides to replicating and using the repository and the models are below! </i>
+> [!WARNING]
+> Our TinyStories Regional paper will soon be on arXiv!
+> Any references to the paper below are currently not accessible 
 
 ```sh
 git clone https://github.com/nirvan840/Vizuara-TinyStories-Regional.git
@@ -49,3 +53,22 @@ git clone https://github.com/nirvan840/Vizuara-TinyStories-Regional.git
   - [⏱️ Training Time and Costs](#training-time-and-costs)
   - [🔄 Replicating the Project](#replicating-the-project)
 
+---
+
+<br> 
+
+## 🗂️ Dataset Generation 
+
+> [!WARNING] 
+> <i> This repository provides code to generate data by making API calls to SOTA models (4o, 4o-mini, Gemini-flash-1.5, etc.) using the [GPT-4-free (G4F)](https://github.com/xtekky/gpt4free) repository. We do not condone using this repository for large-scale dataset generation; we include it as a free alternative to paid API services. Please read and follow official OpenAI/Gemini guidelines. </i>
+
+> [!IMPORTANT]
+> - **Our** datasets (**2M stories each**) for Hindi, Marathi and Bengali generated using **GPT-4o-mini**, are **open-sourced** on our HF
+> - **Translated** versions (Hindi and Bengali) of **Microsoft's TinyStories** dataset can also be found on our HuggingFace
+> - Translated versions (our Hindi ➡️ Bengali ; Hindi ➡️ Marathi ; Bengali ➡️ Hindi) will be soon on our HF.
+
+## ✍️ Preparing Prompts
+- d
+
+
+## 💬 Prompting a Model
