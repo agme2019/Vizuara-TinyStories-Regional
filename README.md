@@ -31,7 +31,7 @@
 git clone https://github.com/nirvan840/Vizuara-TinyStories-Regional.git
 ```
 ```sh
-pip install -U g4f[all] transformers datasets huggingface_hub torch numpy tiktoken wandb tqdm aiolimter
+pip install -U g4f[all] transformers datasets huggingface_hub tiktoken wandb tqdm aiolimter numpy
 ```
 
 ---
