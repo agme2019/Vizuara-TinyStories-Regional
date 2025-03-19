@@ -17,6 +17,7 @@
 > [!IMPORTANT]
 > * <i> Currently, models only support story completion based on starting prompts :) </i>
 > * <i> Guides to replicating and using the repository and the models are below! </i>
+> * <i> Quality of Life updates to various scripts soon to come! </i>
 
 > [!NOTE]
 > * <i> <a href="https://tensordock.com/">TensorDock</a> for providing GPU access! Please check them out for easy-to-deploy and cheap GPU options 💚 </i>
