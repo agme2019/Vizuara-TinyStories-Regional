@@ -33,8 +33,6 @@
 git clone https://github.com/nirvan840/Vizuara-TinyStories-Regional.git
 ```
 
-<br>
-
 ---
 
 
