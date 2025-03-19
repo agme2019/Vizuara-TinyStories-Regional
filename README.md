@@ -41,7 +41,7 @@ pip install -U g4f[all] transformers datasets huggingface_hub tiktoken wandb tqd
 ## 📚 Table of Contents
 
 - 🗂️ Dataset Generation
-  - [✍️ Preparing Prompts](#preparing-prompts)
+  - [✍️ Preparing Prompts](#✍️-Preparing-Prompts)
   - [💬 Prompting a Model](#prompting-a-model)
 - ⚙️ Training SLMs
   - [🔤 Tokenizing Data](#tokenizing-data)
