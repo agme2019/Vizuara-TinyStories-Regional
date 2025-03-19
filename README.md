@@ -47,15 +47,15 @@ pip install g4f[all] aiolimter transformers datasets huggingface_hub sentencepie
 - ### ⚙️ Training SLMs
   - #### [🔤 Tokenizing Data](#tokenizing-data)
   - #### [🏋️ Training the Model](#training-the-model)
-- 🔍 Inference and Evaluation
-  - [🤖 Inference Models (Local or HF)](#inference-models-local-or-hf)
-  - [📊 Evaluate Inference/Stories](#evaluate-inference-stories)
-- 📈 Results
-  - [💡 Inference Examples](#inference-examples)
-  - [✅ A Fitting Use Case](#a-fitting-use-case)
-- 💰 Costs
-  - [⏱️ Training Time and Costs](#training-time-and-costs)
-  - [🔄 Replicating the Project](#replicating-the-project)
+- ### 🔍 Inference and Evaluation
+  - #### [🤖 Inference Models (Local or HF)](#inference-models-local-or-hf)
+  - #### [📊 Evaluate Inference/Stories](#evaluate-inference-stories)
+- ### 📈 Results
+  - #### [💡 Inference Examples](#inference-examples)
+  - #### [✅ A Fitting Use Case](#a-fitting-use-case)
+- ### 💰 Costs
+  - #### [⏱️ Training Time and Costs](#training-time-and-costs)
+  - #### [🔄 Replicating the Project](#replicating-the-project)
 
 ---
 
