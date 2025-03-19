@@ -111,6 +111,7 @@ _TIP💡: To run data generation in the background (detached VM session)_
 ```sh
 tmux new -s session_name
 ```
+
 ---
 
 <br>
@@ -124,7 +125,7 @@ tmux new -s session_name
 > [!IMPORTANT]
 > * PyTroch <code>torch</code> required for training!
 > * Training our SLMs is compute-friendly!
-> * Lower end GPUs T4 (Google Collab), P100 (Kaggle) can be used to train models in <24hrs on our datasets!
+> * Lower end GPUs <code>T4</code> (Google Collab), <code>P100</code> (Kaggle) can be used to train models in <code><24hrs</code> on our datasets!
 
 <h2 id="#tokenizing-data">🔤 Tokenizing Data</h2>
 <ul>
@@ -152,21 +153,29 @@ python training-inference/data/prepare.py
 
 <h2 id="#training-the-model">🏋️ Training the Model</h2>
 <ul>
-  <p><li>Quick and easy changes to the training configuration can be made through the <code>training-inference/config.py</code> script</li></p>
+  <p><li>Training can be resumed for locally saved models as well as those from Vizuara-HF!</li></p>
+  <p><li>Changes to the training configuration can be easily made through <code>training-inference/config.py</code></li></p>
   <p><li>Model weights are checkpointed every <code>eval_iters</code> and saved at <code>training-inference/out/</code> as <code>.pt</code> files</li></p>
 </ul>
 
 _To start training, run:_
-> _Single GPU_
 ```sh
+# Single GPU
 python training-inference/train.py training-inference/config.py
 ```
-> _Multi GPU (DDP)_
 ```sh
+# Multi GPU (DDP)
 torchrun --standalone --nproc_per_node=num_gpus training-inference/train.py training-inference/config.py
 ```
         
 _Automated multi-config training:_
+```sh
+chmod +x automate-training.sh
+./automate-training.sh
+```
 
-        <li><code>chmod +x automate-training.sh</code></li>
-        <li><code>./automate-training.sh</code></li>
+---
+
+<br>
+
+## 🔍 Inference and Evaluation
