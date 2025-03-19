@@ -86,6 +86,7 @@ python generate_prompts.py
 ```
 
 <h2 id="prompting-a-model">💬 Prompting a Model</h2>
+
 <ul>
   <li>Prompts are read from the file/shards and "sent" to the specified LLM (using <a href="https://github.com/xtekky/gpt4free">G4F</a>)</li> 
   <li>Multithreaded API calls result in a max speed of <code>100 stories/min</code> for GPT-4o-mini and GPT-4o (occasionally).</li>
