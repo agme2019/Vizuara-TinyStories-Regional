@@ -6,9 +6,15 @@
   [![arXiv](https://img.shields.io/badge/arXiv-1234.56789-b31b1b.svg?style=flat)](https://arxiv.org/abs/1234.56789)
   [![Huggingfaces](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Spaces-blue)](https://huggingface.co/TinyStories-Regional)
 
+  [![nirvan](https://img.shields.io/badge/nirvan-black?logo=github&logoColor=white&labelColor=black&color=black&style=flat)](https://github.com/nirvan840)
+  [![malhar](https://img.shields.io/badge/malhar-black?logo=github&logoColor=white&labelColor=black&color=black&style=flat)](https://github.com/malharinamdar)
+  [![agnivo](https://img.shields.io/badge/agnivo-black?logo=github&logoColor=white&labelColor=black&color=black&style=flat)](https://github.com/agme2019)
+  [![raj](https://img.shields.io/badge/🌐-rajdandekar-black?logo=globe&logoColor=white&labelColor=black&color=black&style=flat)](https://github.com/agme2019)
+  
+  
   <p>
     <strong>
-      <a href="https://github.com/nirvan840">@nirvan</a>,
+      <href="https://img.shields.io/badge/nirvan840-black?logo=github&logoColor=white&labelColor=black&color=white&style=for-the-badge)](https://github.com/nirvan840"></href>
       <a href="https://github.com/malharinamdar">@malhar</a>,
       <a href="https://github.com/agme2019">@angnivo</a>,
       <a href="https://www.linkedin.com/in/raj-abhijit-dandekar-67a33118a/?originalSubdomain=in">@rajdandekar</a>
@@ -27,12 +33,29 @@
 > * <i> Currently, models only support story completion based on starting prompts </i>
 > * <i> Guides to replicating and using the repository and the models are below! </i>
 
-<br>
-
 ```sh
 git clone https://github.com/nirvan840/Vizuara-TinyStories-Regional.git
 ```
 
 ---
 
+<br> 
+
+## 📚 Table of Contents
+
+- 🗂️ Dataset Generation
+  - [✍️ Preparing Prompts](#preparing-prompts)
+  - [💬 Prompting a Model](#prompting-a-model)
+- ⚙️ Training SLMs
+  - [🔤 Tokenizing Data](#tokenizing-data)
+  - [🏋️ Training the Model](#training-the-model)
+- 🔍 Inference and Evaluation
+  - [🤖 Inference Models (Local or HF)](#inference-models-local-or-hf)
+  - [📊 Evaluate Inference/Stories](#evaluate-inference-stories)
+- 📈 Results
+  - [💡 Inference Examples](#inference-examples)
+  - [✅ A Fitting Use Case](#a-fitting-use-case)
+- 💰 Costs
+  - [⏱️ Training Time and Costs](#training-time-and-costs)
+  - [🔄 Replicating the Project](#replicating-the-project)
 
