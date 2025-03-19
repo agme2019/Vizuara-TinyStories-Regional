@@ -24,8 +24,8 @@
 > * <i> <a href="https://huggingface.co/sarvamai">Sarvam</a>, <a href="https://huggingface.co/TWO">SUTRA</a>, and <a href="https://karpathy.ai/">Andrej Karpathy</a> for your open-source efforts ❤️ </i>
 
 > [!WARNING]
-> Our TinyStories Regional paper will soon be on arXiv!
-> Any references to the paper below are currently not accessible 
+> * Our TinyStories Regional paper will soon be on arXiv!
+> * Any references to the paper below are currently not accessible 
 
 ```sh
 git clone https://github.com/nirvan840/Vizuara-TinyStories-Regional.git
