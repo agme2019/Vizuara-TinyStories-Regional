@@ -32,7 +32,7 @@
 git clone https://github.com/nirvan840/Vizuara-TinyStories-Regional.git
 ```
 ```sh
-pip install g4f[all] torch transformers datasets huggingface_hub sentencepiece tiktoken wandb tqdm aiolimter 
+pip install g4f[all] aiolimter transformers datasets huggingface_hub sentencepiece tiktoken wandb tqdm torch numpy 
 ```
 
 ---
