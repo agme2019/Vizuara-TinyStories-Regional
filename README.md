@@ -254,9 +254,9 @@ python training-inference/sample.py
       </ul>
   <p><li>Each of our SLMs is evaluated in the following manner:</code></li>
       <ul>
-        <li>We prepared 1000 equivalent prompts for each language <code>training-inference/prompt-&lt;langugage&gt;.txt</code></li>
+        <li>We prepared <code>1000</code> equivalent prompts for each language <code>training-inference/prompt-&lt;langugage&gt;.txt</code></li>
             <ul>
-              <li>These 1000 prompts cover themes such as <code>Adventure, Creativity, Courage, etc..</code></li>
+              <li>These <code>1000</code> prompts cover themes such as <code>Adventure, Creativity, Courage, etc..</code></li>
               <li>All the themes and other details can be found in <code>prompting/o1_inference-prompt-generation</code></li>
             </ul>
         <li>Each model produces <code>3 stories</code> per prompt which are sent to SOTA LLMs for eavluation</li>
@@ -264,7 +264,7 @@ python training-inference/sample.py
   </p>
 </ul>
 
-_For each model, 3000 stories are evaluated according to the prompt:_ 
+_For each model, <code>3000</code> stories are evaluated according to the prompt:_ 
 ```sh
 f'''{story}
 
