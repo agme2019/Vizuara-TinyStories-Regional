@@ -16,7 +16,7 @@
 
 > [!IMPORTANT]
 > * <i> Currently, models only support story completion based on starting prompts :) </i>
-> * <i> Guides to replicating and using the repository and the models are below! </i>
+> * <i> Guides to using the repository, datasets and the models are below! </i>
 
 > [!NOTE]
 > #### _A special thanks to_
