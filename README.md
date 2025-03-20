@@ -124,7 +124,7 @@ tmux new -s session_name
 
 > [!IMPORTANT]
 > * It is essential that data is tokenized correctly <bos token> story <eos token> (read below)
-> * Lower end GPUs <code>T4</code> (Google Collab), <code>P100</code> (Kaggle) can be used to train models in <code><24hrs</code> on our datasets!
+> * Lower end GPUs <code>T4</code> (Collab), <code>P100</code> (Kaggle) can be used to train models in <code><24hrs</code> on our datasets!
 
 <h2 id="tokenizing-data">🔤 Tokenizing Data</h2>
 <ul>
