@@ -127,7 +127,7 @@ tmux new -s session_name
 > * Lower end GPUs <code>T4</code> (Google Collab), <code>P100</code> (Kaggle) can be used to train models in <code><24hrs</code> on our datasets!
 
 
-<h1 id="tokenizing-data">🔤 Tokenizing Data</h1>
+<h2 id="tokenizing-data">🔤 Tokenizing Data</h2>
 <ul>
   <p><li>The entire dataset is tokenized before training. Token IDs are stored in <code>.bin</code> files
       <ul>
