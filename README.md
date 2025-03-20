@@ -137,13 +137,14 @@ tmux new -s session_name
 
 # ⚙️ Training Small Language Models (SLMs) 
 
+> [!IMPORTANT]
+> * It is essential that data is tokenized correctly <bos token> story <eos token> (read below)
+> * Lower end GPUs <code>T4</code> (Collab), <code>P100</code> (Kaggle) can be used to train models in <code><24hrs</code> on our datasets!
+
 > [!NOTE]
 > * We utilize Andrej Karpathy's [nanoGPT](https://github.com/karpathy/nanoGPT) repository (with modifications) to train models
 > * Our training script supports multi-GPU training (DDP), progress (TQDM) and logging support (WANDB), along with easy customizability
 
-> [!IMPORTANT]
-> * It is essential that data is tokenized correctly <bos token> story <eos token> (read below)
-> * Lower end GPUs <code>T4</code> (Collab), <code>P100</code> (Kaggle) can be used to train models in <code><24hrs</code> on our datasets!
 
 <h2 id="tokenizing-data">🔤 Tokenizing Data</h2>
 <ul>
@@ -213,6 +214,11 @@ chmod +x training-inference/utils/automate-training.sh
 <br>
 
 # 🔍 Inference and Evaluation
+
+> [!IMPORTANT]
+> * All evaluations are performed by SOTA LLMs, which may be "better" at one language compared to the other
+> * Thus, an <code>8/10</code> Hindi story might not be equivalent in "quality" to an <code>8/10</code> Bangla story
+> * It is crucial to understand that as these models evolve, "ratings"/results will drift as compared to today
 
 > [!NOTE]
 > * Given the small size of the models, CPU inference is supported!
