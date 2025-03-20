@@ -88,14 +88,19 @@ python prompting/prompt_gen/generate_prompts.py
 
 <h2 id="prompting-a-model">💬 Prompting a Model</h2>
 <ul>
-  <p><li>Generated prompts are read from the file/shards and "sent" to the specified LLM (using <a href="https://github.com/xtekky/gpt4free">G4F</a>)</li></p> 
+  <p><li>Prompts are read from the <code>.json</code> file/shards and "sent" to the specified LLM (using <a href="https://github.com/xtekky/gpt4free">G4F</a>)</li></p> 
   <p><li>Multithreaded API calls result in a max speed of <code>100 stories/min</code> for GPT-4o-mini and GPT-4o (occasionally).</li>
       <ul>
         <li>It is recommended number of threads = number of <code>4 x vCPUs</code></li>
         <li>Each thread writes to a common file. Once every 10% of total progress</li>
         <li><i>Optimal config</i>: <code>16 vCPUs</code>, running <code>4 sessions</code> concurrently (one for each shard), each with <code>16 threads</code></li>
       </ul></p>
-  <p><li>Please look into <code>prompting/make_requests.py</code> for customizing the prompting schema</li></p>
+  <p><li>Please look into <code>prompting/make_requests.py</code> for customizing the prompting schema</li>
+      <ul>
+        <li>Generated stories are written to <code>.json</code> files</li>
+        <li>It is recommended to upload these files to HF for seamless integration while training models (below)</li>
+      </ul>
+  </p>
   <p><li>Please look into <code>prompting/request_helper.py</code> for a detailed look into the process</li>
       <ul>
         <li>API/LLM is prompted until a valid story is generated for each prompt</li>
@@ -120,7 +125,7 @@ _To start the data generation process, please run the script:_
 ```sh
 python prompting/make_requests.py
 ```
-_TIP💡: To run data generation in the background (detached VM session)_
+_TIP💡: To run data generation in the background (detached VM session):_
 ```sh
 tmux new -s session_name
 ```
@@ -141,6 +146,7 @@ tmux new -s session_name
 
 <h2 id="tokenizing-data">🔤 Tokenizing Data</h2>
 <ul>
+  <p><li>The <code>.json</code> files uploaded to HF in the previous stage server as our dataset</li></p>
   <p><li>The entire dataset is tokenized before training. Token IDs are stored in <code>.bin</code> files
       <ul>
         <li>The dataset to be tokenized can be chosen as per <code>training-inference/data/prepare.py line 38-46</code></li>
@@ -217,10 +223,10 @@ chmod +x training-inference/utils/automate-training.sh
   <p><li>Refer to the sample settings at the bottom of <code>training-inference/config.py</code></li>
       <ul>
         <li>Choose between locally saved models or those from our HF by toggling <code>load_from_hf</code></li>
-        <li>Stories generated per prompt, temperature and top_k control is available</li>
+        <li>Stories generated per prompt, temperature and top_k can be modified</li>
       </ul>
   <p>
-  <p><li>Various tokenizers can be used inference</li>
+  <p><li>Various tokenizers can be used for inference</li>
       <ul>
         <li>We provide direct support for Sarvam, SUTRA and Tikoken</li>
         <li>For adding your own tokenizers a complete understanding of <code>sample.py</code> is recommended :)</li>
@@ -250,7 +256,8 @@ python training-inference/sample.py
       <ul>
         <li>We prepared 1000 equivalent prompts for each language <code>training-inference/prompt-&lt;langugage&gt;.txt</code></li>
             <ul>
-              <li></li>
+              <li>These 1000 prompts cover themes such as <code>Adventure, Creativity, Courage, etc..</code></li>
+              <li>All the themes and other details can be found in <code>prompting/o1_inference-prompt-generation</code></li>
             </ul>
         <li>Each model produces <code>3 stories</code> per prompt which are sent to SOTA LLMs for eavluation</li>
       </ul>
@@ -263,8 +270,10 @@ f'''{story}
 
 The given {language} short story is for 5-7-year-old children.
 Keeping in mind the target demographic, rate the story on a scale of 1-10 for context awareness, completeness, grammar, fluency, and creativity.
-Evaluate context awareness by strictly assessing how well the story's middle and end align with the prompt "{prompt}".
-Also, provide an overall rating on a scale of 1-10. Only return a  JSON dictionary in the following format: 
+Evaluate context awareness by strictly assessing how well the storys middle and end align with the prompt "{prompt}".
+Also, provide an overall rating on a scale of 1-10.
+
+Only return a JSON dictionary in the following format: 
 {
 "context awareness": "your_context-awareness_score",
 "completeness": "your_completeness_score",
@@ -279,6 +288,34 @@ Also, provide an overall rating on a scale of 1-10. Only return a  JSON dictiona
 
 <br>
 
+# 📈 Results
+
+<h2 id="inference-examples">💡 Inference Examples</h2>
+
+<h2 id="a-fitting-use-case">✅ A Fitting Use Case</h2>
+
+---
+
+<br>
+
 # 💰 Costs
 
 ### _Soon!_
+
+---
+
+<br>
+
+# 📝 Citation
+If you use Vizuara's TinyStories Regional in your research, please cite us using the following BibText template: 
+
+```sh
+@misc{TinyStories-Regional,
+  author = {Nirvan Patil, Malhar Inamdar, Agnivo Gosai, Raj Dandekar},
+  title = {Vizuara TinyStories Regional},
+  year = {2025},
+  howpublished = {\url{https://github.com/nirvan840/Vizuara-TinyStories-Regional}},
+  note = {TinyStories Regional: A framework to produce regional SLMs and use them as a proxy for varying comparisons}
+}
+
+```
