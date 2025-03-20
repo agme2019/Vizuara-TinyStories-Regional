@@ -126,14 +126,22 @@ tmux new -s session_name
 > * It is essential that data is tokenized correctly <bos token> story <eos token> (read below)
 > * Lower end GPUs <code>T4</code> (Google Collab), <code>P100</code> (Kaggle) can be used to train models in <code><24hrs</code> on our datasets!
 
-
 <h2 id="tokenizing-data">🔤 Tokenizing Data</h2>
 <ul>
   <p><li>The entire dataset is tokenized before training. Token IDs are stored in <code>.bin</code> files
       <ul>
-        <li>The dataset to be tokenized can be chosen/specified as per <code>training-inference/data/prepare.py line 38-46</code></li>
-        <li>The <code>.bin</code> files must be appropriately placed in a folder (specified in config.py) in <code>training-inference/data/</code></li>
-        <li>Use <code>training-inference/data/decode_data.py</code> to decode and print first 500 tokens from a <code>.bin</code> file ensuring that the decoded tokens follow the format: <code>&lt;bos token&gt; story1 &lt;eos token&gt; &lt;bos token&gt; story2 &lt;eos token&gt;...</code></li>
+        <li>The dataset to be tokenized can be chosen as per <code>training-inference/data/prepare.py line 38-46</code></li>
+            <ul>
+              <li>To tokenize a custom HF dataset, please look into lines <code>59-61</code> & <code>112-133</code></li>
+            </ul>
+        <li>The <code>.bin</code> files must be appropriately placed in a folder in <code>training-inference/data/</code></li>
+            <ul>
+              <li>This folder must be specified in <code>config.py</code> under the <code>dataset</code> variable</li>
+            </ul>
+        <li>Use <code>training-inference/data/decode_data.py</code> to decode and print first 500 tokens from a <code>.bin</code> file</li>
+            <ul>
+              <li> Ensure that the decoded tokens follow the format: <code>&lt;bos token&gt; story1 &lt;eos token&gt; &lt;bos token&gt; story2 &lt;eos token&gt;...</code></li>
+            </ul>
       </ul>
   </li></p>
   <p><li>Tokenization is carried out by the script <code>training-inference/data/prepare.py</code></li></p>
@@ -162,6 +170,7 @@ python training-inference/data/prepare.py
   <p><li>Training can be resumed for locally saved models as well as those from Vizuara-HF!</li></p>
   <p><li>Changes to the training configuration can be easily made through <code>training-inference/config.py</code></li></p>
   <p><li>Model weights are checkpointed every <code>eval_iters</code> and saved at <code>training-inference/out/</code> as <code>.pt</code> files</li></p>
+  <p><li>We provide WANDB logging support (only specify WANBD API KEY in <code>config.py</code>) and a TQDM progress bar in the terminal.</li></p>
 </ul>
 
 _To start training, run:_
@@ -189,7 +198,7 @@ chmod +x training-inference/utils/automate-training.sh
 > [!NOTE]
 > * Given the small size of the models, CPU inference is supported!
 > * It is crucial to ensure tokenization occurs correctly (refer below)!
-> * Prompting scripts are repurposed for evaluation of stories produced by SLMs
+> * Data generation scripts are repurposed for evaluation of stories produced by SLMs
 
 <h2 id="inference-models-local-or-hf">🤖 SLM Inference (Local or HF)</h2>
 <ul>
@@ -201,7 +210,8 @@ chmod +x training-inference/utils/automate-training.sh
   <p>
   <p><li>Various tokenizers can be used inference</li>
       <ul>
-        <li>Cu</li>
+        <li>We provide direct support for Sarvam, SUTRA and Tikoken</li>
+        <li>For adding your own tokenizers a complete understanding of <code>sample.py</code> is recommended :)</li>
       </ul>
   <p>
   <p><li>Multiple prompts (each on a new line) can be mentioned in a text file.
@@ -217,6 +227,16 @@ _To run inference, run the script:_
 ```sh
 python training-inference/sample.py 
 ```
+
+<h2 id="evaluate-inference-stories">📊 Evaluate Inference/Stories</h2>
+<ul>
+  <p><li>We repurpose the data generation code to send stories (using G4F) to SOTA LLMs for evaluation</code></li>
+      <ul>
+        <li>Choose between locally saved models or those from our HF by toggling <code>load_from_hf</code></li>
+        <li>Stories generated per prompt, temperature and top_k control is available</li>
+      </ul>
+  </p>
+</ul>
 
 ---
 
