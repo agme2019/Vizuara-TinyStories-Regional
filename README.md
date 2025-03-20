@@ -48,7 +48,7 @@ pip install g4f[all] aiolimter transformers datasets huggingface_hub sentencepie
   - #### [🔤 Tokenizing Data](#tokenizing-data)
   - #### [🏋️ Training the Model](#training-the-model)
 - ### 🔍 Inference and Evaluation
-  - #### [🤖 Inference Models (Local or HF)](#inference-models-local-or-hf)
+  - #### [🤖 SLM Inference](#inference-models-local-or-hf)
   - #### [📊 Evaluate Inference/Stories](#evaluate-inference-stories)
 - ### 📈 Results
   - #### [💡 Inference Examples](#inference-examples)
@@ -123,24 +123,30 @@ tmux new -s session_name
 > * Our training script supports multi-GPU training (DDP), progress (TQDM) and logging support (WANDB), along with easy customizability
 
 > [!IMPORTANT]
-> * PyTroch <code>torch</code> required for training!
-> * Training our SLMs is compute-friendly!
+> * It is essential that data is tokenized correctly <bos token> story <eos token> (read below)
 > * Lower end GPUs <code>T4</code> (Google Collab), <code>P100</code> (Kaggle) can be used to train models in <code><24hrs</code> on our datasets!
+
 
 <h2 id="tokenizing-data">🔤 Tokenizing Data</h2>
 <ul>
-  <p><li>The entire dataset is tokenized before training. Token IDs are stored in <code>.bin</code> files</li></p>
+  <p><li>The entire dataset is tokenized before training. Token IDs are stored in <code>.bin</code> files
+      <ul>
+        <li>The <code>.bin</code> files must be appropriately placed in a folder (specified in config.py) in <code>training-inference/data/</code></li>
+        <li>Use <code>training-inference/data/decode_data.py</code> to decode and print first 500 tokens from a <code>.bin</code> file</li>
+        <li>Ensure that the decoded tokens follow the format: <bos token> story2 <eos token> <bos token> story2 <eos token>...</li>
+      </ul>
+  </li></p>
   <p><li>Tokenization is carried out by the script <code>training-inference/data/prepare.py</code></li></p>
   <p><li>We provide direct support for the following tokenizers:
       <ul>
-        <li><a href="https://huggingface.co/sarvamai/sarvam-1">Sarvam</a> (Indic)</li>
-        <li><a href="https://huggingface.co/TWO/sutra-mlt256-v2/tree/main">Sutra</a> (Indic)</li>
-        <li><a href="https://github.com/openai/tiktoken">Tiktoken</a> (GPT-2)</li>
+        <li><a href="https://huggingface.co/sarvamai/sarvam-1">Sarvam (sarvam-1)</a> (Indic)</li>
+        <li><a href="https://huggingface.co/TWO/sutra-mlt256-v2">Sutra (mlt256-v2)</a> (Indic)</li>
+        <li><a href="https://github.com/openai/tiktoken">Tiktoken (GPT-2)</a> (English)</li>
       </ul>
   </li></p>
-  <p><li>We provide easy support for any additional tokenizers on HF.
+  <p><li>We provide easy support for any additional tokenizers available on HF.
       <ul>
-        <li>Only include <code>hf</code> in the tokenizer name and add its HF repository to <code>prepare.py</code>!</li>
+        <li>Specify the new tokenizer along similar lines as<code>training-inference/data/prepare.py line 19-35</code></li>
         <li>For this to work, HF tokenizers must have valid <code>eos</code> and <code>bos</code> tokens</li>
       </ul>
   </li></p>
@@ -170,8 +176,8 @@ torchrun --standalone --nproc_per_node=num_gpus training-inference/train.py trai
         
 _Automated multi-config training:_
 ```sh
-chmod +x automate-training.sh
-./automate-training.sh
+chmod +x training-inference/utils/automate-training.sh
+./training-inference/utils/automate-training.sh
 ```
 
 ---
@@ -180,7 +186,37 @@ chmod +x automate-training.sh
 
 # 🔍 Inference and Evaluation
 
+> [!NOTE]
+> * Given the small size of the models, CPU inference is supported!
+> * It is crucial to ensure tokenization occurs correctly (refer below)!
+> * Prompting scripts are repurposed for evaluation of stories produced by SLMs
 
+<h2 id="inference-models-local-or-hf">🤖 SLM Inference (Local or HF)</h2>
+<ul>
+  <p><li>Refer to the sample settings at the bottom of <code>training-inference/config.py</code></li>
+      <ul>
+        <li>Choose between locally saved models or those from our HF by toggling <code>load_from_hf</code></li>
+        <li>Stories generated per prompt, temperature and top_k control is available</li>
+      </ul>
+  <p>
+  <p><li>Various tokenizers can be used inference</li>
+      <ul>
+        <li>Explicit sup</li>
+      </ul>
+  <p>
+  <p><li>Multiple prompts (each on a new line) can be mentioned in a text file.
+      <ul>
+        <li>Refer to <code>training-inference/&lt;language&gt;-prompts.txt</code></li>
+        <li>Model can be asked to generate multiple unique stories for each prompt.</li>
+        <li>Text and JSON outputs are supported.</li>
+      </ul>
+  </li></p>
+</ul>
+
+_To run inference, run the script:_
+```sh
+python training-inference/sample.py 
+```
 
 ---
 
