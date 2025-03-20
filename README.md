@@ -202,7 +202,7 @@ chmod +x training-inference/utils/automate-training.sh
   <p>
   <p><li>Various tokenizers can be used inference</li>
       <ul>
-        <li>Explicit sup</li>
+        <li>Cu</li>
       </ul>
   <p>
   <p><li>Multiple prompts (each on a new line) can be mentioned in a text file.
