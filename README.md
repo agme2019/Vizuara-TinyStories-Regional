@@ -103,7 +103,20 @@ python prompting/prompt_gen/generate_prompts.py
       </ul></p>
 </ul>
 
-<i>To start the data generation process, please run the script: </i>
+_Optimal prompt complexity/template:_
+```sh
+f```Write a short story in {language} (in Devanagari script) suitable for 5-to-7-year-old children.
+Use simple, easy-to-understand words and limit the story to 3-4 short paragraphs (around 200-300 words).
+The story should feature a clear beginning, middle, and end. Incorporate the verb "{verb}", the noun "{noun}", and the adjective "{adjective}" naturally into the story.
+The story should also integrate the conclusion/tone "{feature1}" through actions and outcomes without directly stating the tone (e.g., do not use "खुश" or similar words explicitly).
+Remember to only use simple words and keep the story short!
+
+Return the output as a JSON dictionary in the following format:
+{
+    "story": "your_generated_story"
+}```
+```
+_To start the data generation process, please run the script:_
 ```sh
 python prompting/make_requests.py
 ```
@@ -231,11 +244,36 @@ python training-inference/sample.py
 <ul>
   <p><li>We repurpose the data generation code to send stories (using G4F) to SOTA LLMs for evaluation</code></li>
       <ul>
-        <li>Choose between locally saved models or those from our HF by toggling <code>load_from_hf</code></li>
-        <li>Stories generated per prompt, temperature and top_k control is available</li>
+        <li>Set <code>evaluate</code> to True in <code>prompting/make_requests.py</code> and run the script</li>
+      </ul>
+  <p><li>Each of our SLMs is evaluated in the following manner:</code></li>
+      <ul>
+        <li>We prepared 1000 equivalent prompts for each language <code>training-inference/prompt-&lt;langugage&gt;.txt</code></li>
+            <ul>
+              <li></li>
+            </ul>
+        <li>Each model produces <code>3 stories</code> per prompt which are sent to SOTA LLMs for eavluation</li>
       </ul>
   </p>
 </ul>
+
+_For each model, 3000 stories are evaluated according to the prompt:_ 
+```sh
+f'''{story}
+
+The given {language} short story is for 5-7-year-old children.
+Keeping in mind the target demographic, rate the story on a scale of 1-10 for context awareness, completeness, grammar, fluency, and creativity.
+Evaluate context awareness by strictly assessing how well the story's middle and end align with the prompt "{prompt}".
+Also, provide an overall rating on a scale of 1-10. Only return a  JSON dictionary in the following format: 
+{
+"context awareness": "your_context-awareness_score",
+"completeness": "your_completeness_score",
+"grammar": "your_grammar_score",
+"fluency": "your_fluency_score",
+"creativity": "your_creativity_score",
+"overall": "your_overall_rating"
+}'''
+```
 
 ---
 
