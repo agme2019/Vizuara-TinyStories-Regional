@@ -216,7 +216,7 @@ chmod +x training-inference/utils/automate-training.sh
 # 🔍 Inference and Evaluation
 
 > [!IMPORTANT]
-> * All evaluations are performed by SOTA LLMs, which may be "better" at one language compared to the other
+> * All evaluations are performed by SOTA LLMs, which may be "biased" towards a language
 > * Thus, an <code>8/10</code> Hindi story might not be equivalent in "quality" to an <code>8/10</code> Bangla story
 > * It is crucial to understand that as these models evolve, "ratings"/results will drift as compared to today
 
