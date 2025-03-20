@@ -312,10 +312,10 @@ If you use Vizuara's TinyStories Regional in your research, please cite us using
 ```sh
 @misc{TinyStories-Regional,
   author = {Nirvan Patil, Malhar Inamdar, Agnivo Gosai, Raj Dandekar},
-  title = {Vizuara TinyStories Regional},
+  title = {TinyStories Regional: A Framework for Developing Regional SLMs as Proxies for Comparative Analysis},
   year = {2025},
   howpublished = {\url{https://github.com/nirvan840/Vizuara-TinyStories-Regional}},
-  note = {TinyStories Regional: A framework to produce regional SLMs and use them as a proxy for varying comparisons}
+  note = {Research conducted as part of Vizuara AI Labs}
 }
 
 ```
