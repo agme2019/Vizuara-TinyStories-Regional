@@ -133,8 +133,7 @@ tmux new -s session_name
       <ul>
         <li>The dataset to be tokenized can be chosen/specified as per <code>training-inference/data/prepare.py line 38-46</code></li>
         <li>The <code>.bin</code> files must be appropriately placed in a folder (specified in config.py) in <code>training-inference/data/</code></li>
-        <li>Use <code>training-inference/data/decode_data.py</code> to decode and print first 500 tokens from a <code>.bin</code> file</li>
-        <li>Ensure that the decoded tokens follow the format: <code>&lt;bos token&gt; story1 &lt;eos token&gt; &lt;bos token&gt; story2 &lt;eos token&gt;...</code></li>
+        <li>Use <code>training-inference/data/decode_data.py</code> to decode and print first 500 tokens from a <code>.bin</code> file ensuring that the decoded tokens follow the format: <code>&lt;bos token&gt; story1 &lt;eos token&gt; &lt;bos token&gt; story2 &lt;eos token&gt;...</code></li>
       </ul>
   </li></p>
   <p><li>Tokenization is carried out by the script <code>training-inference/data/prepare.py</code></li></p>
