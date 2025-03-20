@@ -170,7 +170,6 @@ python training-inference/data/prepare.py
   <p><li>Training can be resumed for locally saved models as well as those from Vizuara-HF!</li></p>
   <p><li>Changes to the training configuration can be easily made through <code>training-inference/config.py</code></li></p>
   <p><li>Model weights are checkpointed every <code>eval_iters</code> and saved at <code>training-inference/out/</code> as <code>.pt</code> files</li></p>
-  <p><li>We provide WANDB logging support (only specify WANBD API KEY in <code>config.py</code>) and a TQDM progress bar in the terminal.</li></p>
 </ul>
 
 _To start training, run:_
