@@ -52,6 +52,7 @@ pip install g4f[all] aiolimter transformers datasets huggingface_hub sentencepie
   - #### [📊 Evaluate Inference/Stories](#evaluate-inference-stories)
 - ### 📈 Results
   - #### [💡 Inference Examples](#inference-examples)
+  - #### [🆚 Tokenizer Comparison](#tokenizer-comparison)
   - #### [✅ A Fitting Use Case](#a-fitting-use-case)
 - ### 💰 Costs
   - #### [⏱️ Training Time and Costs](#training-time-and-costs)
@@ -290,7 +291,9 @@ Only return a JSON dictionary in the following format:
 
 # 📈 Results
 
-<h2 id="inference-examples">💡 Inference Examples</h2>
+<h2 id="inference-examples">💡 Inference Results</h2>
+
+<h2 id="tokenizer-comparison">🆚 Tokenizer Comparison</h2>
 
 <h2 id="a-fitting-use-case">✅ A Fitting Use Case</h2>
 
