@@ -236,7 +236,7 @@ chmod +x training-inference/utils/automate-training.sh
       <ul>
         <li>Refer to <code>training-inference/&lt;language&gt;-prompts.txt</code></li>
         <li>Model can be asked to generate multiple unique stories for each prompt.</li>
-        <li>Text and JSON outputs are supported.</li>
+        <li><code>.txt</code> and <code>.json</code> outputs are supported.</li>
       </ul>
   </li></p>
 </ul>
