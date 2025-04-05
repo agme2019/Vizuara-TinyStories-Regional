@@ -18,16 +18,18 @@
 > [!IMPORTANT]
 > * <i> Currently, models only support story completion based on starting prompts :) </i>
 > * <i> Guides to using the repository, datasets and the models are below! </i>
+> * <i> This repository provides resources and code for the Regional TinyStories framework, which extends the TinyStories approach ([Eldan & Li, 2023](https://arxiv.org/abs/2305.07759)) to three major Indian languages: Hindi, Marathi, and Bengali. Our framework enables training and inference with small language models (SLMs) containing as few as 5-50 million parameters. <i>
+
 
 > [!NOTE]
 > #### _A special thanks to_
-> * <i> <a href="https://tensordock.com/">TensorDock</a> for providing GPU compute! Check them out for easy-to-deploy and cheap GPU/CPU VMs 💚 </i>
+> * <i> <a href="https://tensordock.com/">TensorDock</a> for providing GPU compute! Check them out for easy-to-deploy and affordable GPU/CPU VMs 💚 </i>
 > * <i> Microsoft for inspiring us with their original <a href="https://arxiv.org/abs/2305.07759">TinyStories</a> paper 💙 </i>
 > * <i> <a href="https://huggingface.co/sarvamai">Sarvam</a>, <a href="https://huggingface.co/TWO">SUTRA</a>, and <a href="https://karpathy.ai/">Andrej Karpathy</a> for their open-source efforts ❤️ </i>
 
 > [!WARNING]
 > * Our TinyStories Regional paper will soon be on arXiv!
-> * Any references to the paper below are currently not accessible 
+> * Any references to the paper below are currently not accessible
 
 ```sh
 git clone https://github.com/nirvan840/Vizuara-TinyStories-Regional.git
@@ -44,7 +46,7 @@ pip install g4f[all] aiolimter transformers datasets huggingface_hub sentencepie
 
 - ### 🗂️ Dataset Generation
   - #### [✍️ Preparing Prompts](#preparing-prompts)
-  - #### [💬 Prompting a Model](#prompting-a-model)
+  - #### [💬 Prompting a LLM](#prompting-a-model)
 - ### ⚙️ Training SLMs
   - #### [🔤 Tokenizing Data](#tokenizing-data)
   - #### [🏋️ Training the Model](#training-the-model)
@@ -66,7 +68,7 @@ pip install g4f[all] aiolimter transformers datasets huggingface_hub sentencepie
 # 🗂️ Dataset Generation 
 
 > [!WARNING] 
-> <i> This repository provides code to generate data by making API calls to SOTA models (4o, 4o-mini, Gemini-flash-1.5, etc.) using the [GPT-4-free (G4F)](https://github.com/xtekky/gpt4free) repository. We do not condone using this repository for large-scale dataset generation; we include it as a free alternative to paid API services. Please read and follow official OpenAI/Gemini guidelines. </i>
+> <i> This repository provides code to generate data by making API calls to SOTA models (4o, 4o-mini, Gemini-flash-1.5, etc.) using the [GPT-4-free (G4F)](https://github.com/xtekky/gpt4free) repository. This repository is provided for research purposes only. We do not intend to promote using this repository for large-scale dataset generation; respect all terms of service for any API or model you use. Ensure appropriate attribution and licensing for any generated content. Please read and follow official OpenAI/Gemini guidelines. </i>
 
 > [!NOTE]
 > - Our datasets for Hindi, Marathi and Bangla, generated using GPT-4o-mini, are open-sourced on our HF
@@ -88,7 +90,7 @@ pip install g4f[all] aiolimter transformers datasets huggingface_hub sentencepie
 python prompting/prompt_gen/generate_prompts.py
 ```
 
-<h2 id="prompting-a-model">💬 Prompting a Model</h2>
+<h2 id="prompting-a-model">💬 Prompting a LLM</h2>
 <ul>
   <p><li>Prompts are read from the <code>.json</code> file/shards and "sent" to the specified LLM (using <a href="https://github.com/xtekky/gpt4free">G4F</a>)</li></p> 
   <p><li>Multithreaded API calls result in a max speed of <code>100 stories/min</code> for GPT-4o-mini and GPT-4o (occasionally).</li>
@@ -300,7 +302,46 @@ Only return a JSON dictionary in the following format:
 
 <h2 id="inference-examples">💡 Inference Results</h2>
 
+Our comprehensive evaluation across Hindi, Marathi, and Bengali story generation reveals systematic patterns in model scaling behavior while highlighting important language-specific characteristics:
+
+| Language | Model Size (53-54M) | Grammar | Fluency | Context | Completeness | Overall |
+|----------|---------------------|---------|---------|---------|--------------|---------|
+| Hindi    | 512/6               | 8.912   | 8.554   | 7.734   | 7.783        | 8.158   |
+| Bengali  | 512/6               | 8.816   | 8.420   | 7.507   | 7.645        | 8.016   |
+| Marathi  | 512/6               | 8.723   | 8.106   | 7.245   | 7.407        | 7.807   |
+
+Key findings:
+- Small language models with only 53M parameters can generate coherent, grammatical stories in Indian languages
+- Increasing model size from 4.5M to 153M parameters consistently improves performance across all languages
+- Grammar scores show the highest performance, while context awareness remains most challenging
+- The optimal configuration appears to be around 512 hidden units with 6 layers, balancing performance and efficiency
+
+We evaluated performance using GPT-4 as a judge on four metrics: completeness, grammar, fluency, and creativity. Models were trained on a translated TinyStories as well as new synthetic content generated by prompting LLM.
+
 <h2 id="tokenizer-comparison">🆚 Tokenizer Comparison</h2>
+
+We compared three tokenizers—Sarvam, SUTRA, and Tiktoken—across Hindi, Marathi, and Bengali, revealing significant differences in performance:
+
+| Language | Tokenizer | Grammar | Fluency | Context | Overall |
+|----------|-----------|---------|---------|---------|---------|
+| Hindi    | Sarvam    | 8.912   | 8.554   | 7.734   | 8.158   |
+| Hindi    | SUTRA     | 8.875   | 8.292   | 7.548   | 7.950   |
+| Hindi    | Tiktoken  | 8.681   | 7.889   | 6.974   | 7.602   |
+| Bengali  | Sarvam    | 8.816   | 8.420   | 7.507   | 8.016   |
+| Bengali  | SUTRA     | 8.845   | 8.212   | 7.614   | 7.928   |
+| Bengali  | Tiktoken  | 8.614   | 7.778   | 7.118   | 7.572   |
+| Marathi  | Sarvam    | 8.723   | 8.106   | 7.245   | 7.807   |
+| Marathi  | SUTRA     | 8.724   | 8.012   | 7.523   | 7.781   |
+| Marathi  | Tiktoken  | 8.451   | 7.524   | 7.014   | 7.374   |
+
+Key insights:
+- Language-specific tokenizers (Sarvam, SUTRA) consistently outperform general-purpose alternatives (Tiktoken)
+- Sarvam achieves the highest overall scores for Hindi and Bengali, with competitive performance for Marathi
+- Tiktoken shows the lowest perplexity but struggles with capturing context and completeness
+- Renyi entropy analysis shows Sarvam produces more concentrated token distributions (lower entropy values) compared to SUTRA
+- MorphScore analysis reveals SUTRA better preserves morphological boundaries despite higher entropy
+
+
 
 <h2 id="a-fitting-use-case">✅ A Fitting Use Case</h2>
 
